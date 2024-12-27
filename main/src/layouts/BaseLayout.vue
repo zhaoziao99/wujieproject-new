@@ -15,12 +15,12 @@
           :value="item.value"
         />
       </el-select>
-      
+
       <div class="user-info" v-if="isLoggedIn">
         <el-button type="text" @click="handleLogout">退出登录</el-button>
       </div>
     </div>
-    
+
     <div class="main-content">
       <router-view></router-view>
     </div>
@@ -44,11 +44,7 @@ const showHeader = computed(() => {
   return router.currentRoute.value.name !== 'login'
 })
 
-const appOptions = [
-  { label: 'Vue2子应用', value: '/sub-vue2' },
-  { label: 'Vue3子应用', value: '/sub-vue3' },
-  { label: '学校管理系统', value: '/school-manager' }
-]
+const appOptions = [{ label: 'Vue2子应用', value: '/sub-vue2' }]
 
 const handleAppChange = (value: string) => {
   router.push(value)

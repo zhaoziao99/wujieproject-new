@@ -8,13 +8,8 @@ interface AppConfig {
 export const apps: Record<string, AppConfig> = {
   subVue2: {
     name: 'sub-vue2',
-    url: 'http://localhost:8080', // 生产环境URL
-    devUrl: 'http://localhost:8080' // 开发环境URL
-  },
-  vueSchoolManager: {
-    name: 'vue-school-manager',
-    url: 'http://localhost:8083',
-    devUrl: 'http://localhost:8083'
+    url: 'http://localhost:8001', // 生产环境URL
+    devUrl: 'http://localhost:8081' // 开发环境URL
   }
 }
 

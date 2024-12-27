@@ -42,22 +42,9 @@ const createSubAppConfig = (name: string, port: string) => ({
 })
 
 // 配置子应用
-const schoolManagerConfig = createSubAppConfig('vue-school-manager', '8083')
-const subVue2Config = createSubAppConfig('sub-vue2', '8080')
-const subVue3Config = createSubAppConfig('sub-vue3', '8082')
+const subVue2Config = createSubAppConfig('sub-vue2', '8001')
 // 预加载子应用
-preloadApp(schoolManagerConfig)
 preloadApp(subVue2Config)
-preloadApp(subVue3Config)
-
-// 设置子应用
-WujieVue.setupApp({
-  ...schoolManagerConfig,
-  props: {
-    token: authStore.token,
-    getToken: () => authStore.token
-  }
-})
 
 WujieVue.setupApp({
   ...subVue2Config,
@@ -66,11 +53,5 @@ WujieVue.setupApp({
     getToken: () => authStore.token
   }
 })
-WujieVue.setupApp({
-  ...subVue3Config,
-  props: {
-    token: authStore.token,
-    getToken: () => authStore.token
-  }
-})
+
 app.mount('#app')

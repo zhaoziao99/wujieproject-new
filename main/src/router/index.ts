@@ -1,7 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
-import SubVue2 from '../views/SubVue2.vue'
-import SchoolManager from '../views/SchoolManager.vue'
 import MainLayout from '../layouts/BaseLayout.vue'
 
 const routes: RouteRecordRaw[] = [
@@ -24,19 +22,7 @@ const routes: RouteRecordRaw[] = [
       {
         path: '/sub-vue2',
         name: 'subVue2',
-        component: SubVue2,
-        meta: { requiresAuth: true }
-      },
-      {
-        path: '/sub-vue3',
-        name: 'subVue3',
-        component: () => import('../views/SubVue3.vue'),
-        meta: { requiresAuth: true }
-      },
-      {
-        path: '/school-manager',
-        name: 'school-manager',
-        component: SchoolManager,
+        component: () => import('../views/SubVue2.vue'),
         meta: { requiresAuth: true }
       }
     ]
